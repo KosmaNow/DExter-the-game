@@ -24,6 +24,7 @@ def szukanie_ofiary():
     prwtkorzytane = 0
 
     for i in range(pr):
+        
         prwtkorzytane = prwtkorzytane + 1
         print("próba", prwtkorzytane, "z", pr)
 
@@ -36,6 +37,7 @@ def szukanie_ofiary():
         inp = input(">>>>")
 
         if inp == "1":
+            
             print("ofiara uceikła")
             if prwtkorzytane >= pr:
                 print("przekroczyłes maks prób")
@@ -44,12 +46,14 @@ def szukanie_ofiary():
             continue
 
         elif inp == "2":
+            
             print("Czego chcesz użyć ?")
             print("a... młotka")
             print("b... strzxykawki")
             inp = input(">>>>")
 
             if inp == "a":
+                
                 print("ofiara wyrwała się i ucieka")
                 if prwtkorzytane >= pr:
                     print("przekroczyłes maks prób")
@@ -58,8 +62,10 @@ def szukanie_ofiary():
                 continue
 
             elif inp == "b":
+                
                 print("ofiara uśpiona i w bagażniku")
                 while statystyki.ofira_hp > 0 and statystyki.dex_hp > 0:
+                    
                     print("musisz jechać do starego portu")
                     time.sleep(1)
                     print("o nie jakiś świr z bronią grozi ci że jak nie obliczysz pola trójkąta to cie zabije")
@@ -69,6 +75,7 @@ def szukanie_ofiary():
                     inp = float(input())
 
                     if inp == 30:
+                        
                         print("świr kończy live")
                     else:
                         print("zabija cię deksiii")
@@ -80,6 +87,7 @@ def szukanie_ofiary():
                     inp = input("")
 
                     if inp == "tak":
+                        
                         statystyki.ofira_hp = statystyki.ofira_hp - 100
                         statystyki.punkty_misji = statystyki.punkty_misji + 1
                     else:
@@ -87,6 +95,7 @@ def szukanie_ofiary():
                         statystyki.punkty_misji = statystyki.punkty_misji - 1
 
                     if prwtkorzytane >= pr:
+                        
                         print("przekroczyłes maks prób")
                         statystyki.dex_hp = 0
                         return None
